@@ -11,11 +11,19 @@ module.exports = {
             {
                 test: /\.jsx?$/,
                 loader: 'babel-loader'
-            }
+            },
+            {
+                test: /\.js$/,
+                use: 'babel-loader',
+             },
+             {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader'],
+             }
         ]
     },
     plugins: [new HtmlWebpackPlugin({
-        template: './src/index.html'
+        template: './public/index.html'
     })],
     devServer: {
         historyApiFallback: true
